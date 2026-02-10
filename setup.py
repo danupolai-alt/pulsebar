@@ -1,6 +1,5 @@
 """
-สำหรับ build เป็น .app บน macOS
-ใช้คำสั่ง: python setup.py py2app
+Setup script for PulseBar - macOS Menu Bar App
 """
 
 from setuptools import setup
@@ -9,15 +8,17 @@ APP = ['main.py']
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,
-    'iconfile': None,
     'plist': {
-        'CFBundleName': 'Crypto Menu Bar',
-        'CFBundleDisplayName': 'Crypto Menu Bar',
-        'CFBundleIdentifier': 'com.yourname.cryptomenubar',
-        'CFBundleVersion': '1.0.0',
-        'LSUIElement': True,  # สำคัญ! ทำให้ไม่แสดง dock icon
+        'CFBundleName': 'PulseBar',
+        'CFBundleDisplayName': 'PulseBar',
+        'CFBundleIdentifier': 'com.danupolai.pulsebar',
+        'CFBundleVersion': '9.0.0',
+        'CFBundleShortVersionString': '9.0',
+        'LSUIElement': True,
+        'NSHumanReadableCopyright': '© 2024 danupolai-alt',
     },
-    'packages': ['rumps', 'requests'],
+    'packages': ['rumps', 'requests', 'yfinance'],
+    'includes': ['ctypes', 'datetime', 'threading', 'time'],
 }
 
 setup(
