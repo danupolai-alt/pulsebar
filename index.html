@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseBar — Real-Time Trading Dashboard for macOS</title>
+    <meta name="description" content="PulseBar — Free & open source macOS menu bar app. Track crypto, gold (XAUUSD), and stock indices in real-time.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-brand">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="logo-bg" width="40" height="40" rx="10" fill="url(#logoGradient)"/>
+                        <path class="logo-pulse" d="M8 20H14L17 12L23 28L26 20H32" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#8b5cf6"/>
+                                <stop offset="100%" stop-color="#ec4899"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-main">PulseBar</span>
+                        <span class="logo-tagline">Trade. Track. Triumph.</span>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#features" class="nav-link" data-en="Features" data-th="ฟีเจอร์">Features</a>
+                    <a href="#how-it-works" class="nav-link" data-en="How It Works" data-th="วิธีใช้">How It Works</a>
+                    <a href="#download" class="nav-link" data-en="Download" data-th="ดาวน์โหลด">Download</a>
+                </div>
+                
+                <!-- Language Toggle -->
+                <div class="lang-toggle" id="langToggle">
+                    <span class="lang-current">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option">TH</span>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <div class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon" id="currentThemeIcon">🌙</span>
+                    <span class="theme-text">Theme</span>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-option" data-theme="auto">
+                            <i class="fas fa-clock"></i>
+                            <span>Auto</span>
+                            <span class="auto-badge">Time</span>
+                        </div>
+                        <div class="theme-option" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark</span>
+                        </div>
+                        <div class="theme-option" data-theme="light">
+                            <i class="fas fa-sun"></i>
+                            <span>Light</span>
+                        </div>
+                        <div class="theme-option" data-theme="minimal">
+                            <i class="fas fa-circle"></i>
+                            <span>Minimal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://github.com/danupolai-alt/pulsebar" target="_blank" class="nav-link github-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge">🚀</span>
+                <span data-en="Free & Open Source — macOS 13.0+" data-th="ฟรีและโอเพ่นซอร์ส — macOS 13.0+">Free & Open Source — macOS 13.0+</span>
+                <span class="version-badge">
+                    <a href="https://github.com/danupolai-alt/pulsebar/blob/main/CHANGELOG.md" target="_blank">v9.0</a>
+                </span>
+            </div>
+            
+            <h1 class="hero-title" data-en="Trade Smarter.<br><span class='gradient-text'>Track Faster.</span>" data-th="เทรดให้ชาญฉลาด<br><span class='gradient-text'>ติดตามทันใจ</span>">
+                Trade Smarter.<br>
+                <span class="gradient-text">Track Faster.</span>
+            </h1>
+            
+            <p class="hero-subtitle" data-en="PulseBar delivers real-time market data straight to your macOS menu bar. Crypto, gold, indices — all at a glance. No fluff, just signals." data-th="PulseBar ส่งข้อมูลตลาดแบบ Real-time ตรงถึง macOS Menu Bar ของคุณ Crypto, ทองคำ, ดัชนีหุ้น — ดูได้ในครั้งเดียว ไม่มีอะไรเกินจำเป็น">
+                PulseBar delivers real-time market data straight to your macOS menu bar. 
+                Crypto, gold, indices — all at a glance. No fluff, just signals.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary" data-en="<i class='fab fa-apple'></i>Download for macOS" data-th="<i class='fab fa-apple'></i>ดาวน์โหลดสำหรับ macOS">
+                    <i class="fab fa-apple"></i>
+                    Download for macOS
+                </a>
+                <a href="https://github.com/danupolai-alt/pulsebar" target="_blank" class="btn btn-secondary" data-en="<i class='fab fa-github'></i>View on GitHub" data-th="<i class='fab fa-github'></i>ดูบน GitHub">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+            </div>
+            
+            <!-- Menu Bar Preview -->
+            <div class="menu-bar-preview">
+                <div class="mockup-menu-bar">
+                    <div class="menu-left">
+                        <span class="apple-icon"></span>
+                        <span>PulseBar</span>
+                        <span>File</span>
+                        <span>Edit</span>
+                    </div>
+                    <div class="menu-right">
+                        <div class="price-item">
+                            <span class="crypto-icon">₿</span>
+                            <span class="price">BTC 84,231</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="crypto-icon">🥇</span>
+                            <span class="price">XAU 2,798</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="crypto-icon">📊</span>
+                            <span class="price">US30 42,156</span>
+                        </div>
+                        <span class="time">9:41 AM</span>
+                    </div>
+                </div>
+                
+                <!-- Dropdown Preview -->
+                <div class="dropdown-preview">
+                    <div class="dropdown-header">🚀 ราคาตลาด</div>
+                    <div class="dropdown-section">
+                        <div class="section-title">🪙 Crypto</div>
+                        <div class="dropdown-item">
+                            <span>✅ ₿ BTC: $84,231 🟢</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <span>⬜️ Ξ ETH: $4,521 🔴</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <span>⬜️ ◎ SOL: $198 🟢</span>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-section">
+                        <div class="section-title">📈 Forex & Indices</div>
+                        <div class="dropdown-item active">
+                            <span>✅ 🥇 XAUUSD: 2,798 🟢</span>
+                        </div>
+                        <div class="dropdown-item active">
+                            <span>✅ 📊 US30: 42,156 🔴</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Effects -->
+        <div class="gradient-bg"></div>
+        <div class="grid-pattern"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Everything you need to track markets" data-th="ทุกอย่างที่คุณต้องการเพื่อติดตามตลาด">Everything you need to track markets</h2>
+                <p class="section-subtitle" data-en="Built natively for macOS with performance and simplicity in mind." data-th="สร้างขึ้นสำหรับ macOS โดยเฉพาะ เน้นประสิทธิภาพและความเรียบง่าย">Built natively for macOS with performance and simplicity in mind.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title" data-en="Real-time Prices" data-th="ราคา Real-time">Real-time Prices</h3>
+                    <p class="feature-desc" data-en="Live price updates from Binance API for crypto and Yahoo Finance for gold & indices. No delays, always current." data-th="อัปเดตราคาสดจาก Binance API สำหรับ Crypto และ Yahoo Finance สำหรับทองคำและดัชนี ไม่มีดีเลย์">Live price updates from Binance API for crypto and Yahoo Finance for gold & indices. No delays, always current.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="feature-title" data-en="Multi-Asset Support" data-th="หลากหลายสินทรัพย์">Multi-Asset Support</h3>
+                    <p class="feature-desc" data-en="Track 8+ cryptocurrencies plus Gold (XAUUSD), Dow Jones (US30), and Nasdaq 100 (NAS100) all in one place." data-th="ติดตาม Crypto 8+ ตัว ทองคำ (XAUUSD), ดาวโจนส์ (US30), และแนสแด็ก (NAS100) ในที่เดียว">Track 8+ cryptocurrencies plus Gold (XAUUSD), Dow Jones (US30), and Nasdaq 100 (NAS100) all in one place.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title" data-en="Price Alerts" data-th="แจ้งเตือนราคา">Price Alerts</h3>
+                    <p class="feature-desc" data-en="Set custom price targets and get native macOS notifications when your assets hit the mark." data-th="ตั้งเป้าหมายราคาเอง และรับการแจ้งเตือนแบบ Native บน macOS เมื่อถึงราคา">Set custom price targets and get native macOS notifications when your assets hit the mark.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="feature-title" data-en="Menu Bar Display" data-th="แสดงบน Menu Bar">Menu Bar Display</h3>
+                    <p class="feature-desc" data-en="Choose up to 3 assets to display simultaneously in your menu bar with live prices and 24h change indicators." data-th="เลือกแสดงได้สูงสุด 3 สินทรัพย์ พร้อมกันบน Menu Bar พร้อมราคาสดและตัวบ่งชี้การเปลี่ยนแปลง 24 ชั่วโมง">Choose up to 3 assets to display simultaneously in your menu bar with live prices and 24h change indicators.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="feature-title" data-en="Auto-Refresh" data-th="อัปเดตอัตโนมัติ">Auto-Refresh</h3>
+                    <p class="feature-desc" data-en="Automatic price updates every 15 seconds with smart rate limiting to prevent API throttling." data-th="อัปเดตราคาอัตโนมัติทุก 15 วินาที พร้อมระบบจำกัดอัตราการใช้งานอย่างฉลาด">Automatic price updates every 15 seconds with smart rate limiting to prevent API throttling.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3 class="feature-title" data-en="Lightweight" data-th="เบา เร็ว">Lightweight</h3>
+                    <p class="feature-desc" data-en="Built with Python and rumps. No Electron bloat. Minimal memory and CPU usage." data-th="สร้างด้วย Python และ rumps ไม่ใช้ Electron ไม่กิน RAM ไม่กิน CPU">Built with Python and rumps. No Electron bloat. Minimal memory and CPU usage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Up and running in seconds" data-th="เริ่มใช้งานในไม่กี่วินาที">Up and running in seconds</h2>
+                <p class="section-subtitle" data-en="No accounts, no API keys, no setup. Just download and go." data-th="ไม่ต้องสมัคร ไม่ต้องมี API Key ไม่ต้องตั้งค่า แค่ดาวน์โหลดและใช้งาน">No accounts, no API keys, no setup. Just download and go.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 class="step-title" data-en="Download" data-th="ดาวน์โหลด">Download</h3>
+                    <p class="step-desc" data-en="Grab the app from GitHub Releases or build from source with a single command." data-th="ดาวน์โหลดจาก GitHub Releases หรือ Build จากซอร์สด้วยคำสั่งเดียว">Grab the app from GitHub Releases or build from source with a single command.</p>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="step-title" data-en="Launch" data-th="เปิดใช้งาน">Launch</h3>
+                    <p class="step-desc" data-en="Open the app and it appears in your menu bar. No dock icon, no windows — pure menu bar." data-th="เปิดแอปแล้วจะขึ้นที่ Menu Bar ไม่มีไอคอนใน Dock ไม่มีหน้าต่าง — ล้วนๆ บน Menu Bar">Open the app and it appears in your menu bar. No dock icon, no windows — pure menu bar.</p>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="step-title" data-en="Select Assets" data-th="เลือกสินทรัพย์">Select Assets</h3>
+                    <p class="step-desc" data-en="Pick up to 3 assets from the menu to track. Toggle between crypto, gold, and indices instantly." data-th="เลือกแสดงได้สูงสุด 3 สินทรัพย์ สลับระหว่าง Crypto, ทองคำ และดัชนีได้ทันที">Pick up to 3 assets from the menu to track. Toggle between crypto, gold, and indices instantly.</p>
+                </div>
+            </div>
+            
+            <!-- Code Example -->
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                    <span class="code-title">Terminal</span>
+                </div>
+                <pre><code><span class="code-comment"># Install dependencies</span>
+<span class="code-prompt">$</span> pip3 install rumps requests yfinance
+
+<span class="code-comment"># Run the app</span>
+<span class="code-prompt">$</span> python3 main.py
+
+<span class="code-comment"># Or build as .app</span>
+<span class="code-prompt">$</span> python3 setup.py py2app</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Assets -->
+    <section class="assets">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Supported Assets</h2>
+                <p class="section-subtitle">Track your favorite markets from one place</p>
+            </div>
+            
+            <div class="assets-grid">
+                <div class="asset-category">
+                    <h3 class="category-title">🪙 Cryptocurrencies</h3>
+                    <div class="asset-list">
+                        <span class="asset-tag"><span class="asset-icon">₿</span> BTC</span>
+                        <span class="asset-tag"><span class="asset-icon">Ξ</span> ETH</span>
+                        <span class="asset-tag"><span class="asset-icon">◎</span> SOL</span>
+                        <span class="asset-tag"><span class="asset-icon">🔶</span> BNB</span>
+                        <span class="asset-tag"><span class="asset-icon">✕</span> XRP</span>
+                        <span class="asset-tag"><span class="asset-icon">₳</span> ADA</span>
+                        <span class="asset-tag"><span class="asset-icon">Ð</span> DOGE</span>
+                        <span class="asset-tag"><span class="asset-icon">🔺</span> AVAX</span>
+                    </div>
+                </div>
+                
+                <div class="asset-category">
+                    <h3 class="category-title">📈 Forex & Indices</h3>
+                    <div class="asset-list">
+                        <span class="asset-tag highlight"><span class="asset-icon">🥇</span> XAUUSD</span>
+                        <span class="asset-tag highlight"><span class="asset-icon">📊</span> US30</span>
+                        <span class="asset-tag highlight"><span class="asset-icon">📈</span> NAS100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-content">
+                    <h2 class="download-title" data-en="Download PulseBar" data-th="ดาวน์โหลด PulseBar">Download PulseBar</h2>
+                    <p class="download-subtitle" data-en="Free, open-source, and built for macOS." data-th="ฟรี โอเพ่นซอร์ส และสร้างขึ้นสำหรับ macOS">Free, open-source, and built for macOS.</p>
+                    
+                    <div class="system-requirement">
+                        <i class="fas fa-info-circle"></i>
+                        <span data-en="Requires macOS 13.0 (Ventura) or later" data-th="ต้องการ macOS 13.0 (Ventura) ขึ้นไป">Requires macOS 13.0 (Ventura) or later</span>
+                    </div>
+                    
+                    <div class="download-buttons">
+                        <a href="#" class="btn btn-large btn-primary" data-en="<i class='fab fa-apple'></i>Download DMG" data-th="<i class='fab fa-apple'></i>ดาวน์โหลด DMG">
+                            <i class="fab fa-apple"></i>
+                            Download DMG
+                        </a>
+                        <a href="https://github.com/danupolai-alt/pulsebar" target="_blank" class="btn btn-large btn-secondary" data-en="<i class='fab fa-github'></i>View on GitHub" data-th="<i class='fab fa-github'></i>ดูบน GitHub">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                    </div>
+                    
+                    <div class="build-command">
+                        <p data-en="Or build from source:" data-th="หรือ Build จากซอร์ส:">Or build from source:</p>
+                        <code>git clone https://github.com/danupolai-alt/pulsebar/trading-menu-bar.git && cd trading-menu-bar && pip3 install -r requirements.txt && python3 main.py</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-icon">📊</span>
+                    <span class="logo-main">PulseBar</span>
+                </div>
+                <p class="footer-text" data-en="Free & open source. Built with 💕 for macOS users." data-th="ฟรีและโอเพ่นซอร์ส สร้างด้วย 💕 สำหรับผู้ใช้ macOS">Free & open source. Built with 💕 for macOS users.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/danupolai-alt/pulsebar" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PulseBar. Licensed under MIT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
